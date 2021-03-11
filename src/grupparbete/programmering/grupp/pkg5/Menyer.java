@@ -103,10 +103,7 @@ public class Menyer {
         if(val == 2)return false;
         else return true;       
     }
-    public static boolean FortsattaOppet(){
-        System.out.println("Vill ni stänga för dagen och få ett");
-        return true;
-    }
+
     public static void Bokslut(){
         System.out.println("\nDagens kunder och bil affärer:");
         for (Kund i : Kund.listaKunder) {
