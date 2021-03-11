@@ -64,11 +64,9 @@ public class Menyer {
         // Huvudmenyn som presenteras.
         do {
             felaktigInput = false;
-            System.out.println("");
-            System.out.println("Huvudmeny");
+            System.out.println("\nHuvudmeny");
             System.out.println("Vad vill du göra?");
-            System.out.println("_______________________________________");
-            System.out.println("");
+            System.out.println("_______________________________________\n");
             System.out.println("1 För att serva din bil.");
             System.out.println("2 För att få din bil tvättad.");
             System.out.println("3 För att titta på bil.");
@@ -100,8 +98,7 @@ public class Menyer {
             System.out.println("____________________________");
             System.out.println("Tryck 1 för Bromsservice");
             System.out.println("Tryck 2 för Motorservice");
-            System.out.println("Tryck 3 för Däckservice");
-            System.out.println("");
+            System.out.println("Tryck 3 för Däckservice\n");
             System.out.print("Val: ");
             
             // Användaren/kunden får göra sitt val
@@ -123,7 +120,7 @@ public class Menyer {
         do {
         felaktigInput = false;
         System.out.println();
-        System.out.println("Välkommen till våran tvättavdelning!");
+        System.out.println("Välkommen till vår tvättavdelning!");
         System.out.println();
         System.out.println("Tvättmeny");
         System.out.println("Vad vill du göra?");
@@ -176,17 +173,12 @@ public class Menyer {
             }                
         } while (felaktigInput);
         return kund;       
-        /*
-        val = BilHall.GetInput();
-        if(val == 2)return false;
-        else return true;
-        */
     }
 
     public static void Bokslut(){
         System.out.println("\nDagens kunder och bil affärer:");
         for (Kund i : Kund.listaKunder) {
-            System.out.println(i.namn+" "+i.typAvAffar+" "+i.minBil.tillverkare);       
+            System.out.println(i.namn+" "+i.typAvAffar+" "+i.minBil.tillverkare+" för "+i.minBil.pris+" SEK.");       
         }
         System.out.println("\nBilar i lager:");
         int j = 1;
@@ -194,6 +186,5 @@ public class Menyer {
                 System.out.print(j++);
                 i.Beskrivning();                   
             }
-    }
-    
+    }    
 }

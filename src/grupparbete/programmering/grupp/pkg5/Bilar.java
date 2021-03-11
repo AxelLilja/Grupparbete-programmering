@@ -14,13 +14,13 @@ import java.util.ArrayList;
 public class Bilar {
     
     // Attribut för klassen bilar
-    String arsmodell;
-    String farg;
-    String modell;
-    String tillverkare;
-    int mil;
-    int pris;
-    String vaxellada;
+    public String tillverkare;
+    private final String modell;
+    private final String arsmodell;
+    private final String farg;
+    public int mil;
+    public int pris;
+    private final String vaxellada;
     
     // Skapar konstruktor för klassen Bilar
     public Bilar (String tillverkare, String modell, String arsmodell, String farg, int mil, int pris, String vaxellada){

@@ -13,10 +13,10 @@ import java.util.ArrayList;
  */
 public class Lager {
     // Skapar bilar/objekt/instanser av klassen Bilar
-    static Bilar bil1 = new Bilar("Volvo", "V70", "2008", "silver metallic", 9000, 95000, "manuell");
-    static Bilar bil2 = new Bilar("Honda", "Accord", "2005", "vit", 20000, 45000, "manuell");
-    static Bilar bil3 = new Bilar("Volkswagen", "Golf", "2013", "svart", 5000, 105000, "automat");
-    static Bilar bil4 = new Bilar("Kia", "Ceed", "2004","Vit", 2400, 56000, "manuell");
+    private final static Bilar bil1 = new Bilar("Volvo", "V70", "2008", "silver metallic", 9000, 95000, "manuell");
+    private final static Bilar bil2 = new Bilar("Honda", "Accord", "2005", "vit", 20000, 45000, "manuell");
+    private final static Bilar bil3 = new Bilar("Volkswagen", "Golf", "2013", "svart", 5000, 105000, "automat");
+    private final static Bilar bil4 = new Bilar("Kia", "Ceed", "2004","Vit", 2400, 56000, "manuell");
     
     // Lägger till olika bilar till listan över tillgängliga bilar i bilhallen.
     // Skapar en ArrayList för bilarna som finns i lager. Denna uppdateras om användaren köper eller säljer sin bil ("byter in") till bilhallen.
@@ -38,8 +38,7 @@ public class Lager {
         } 
         else {
             System.out.println("Säljare: Vad roligt att du vill titta på en av våra bilar i lager");
-            System.out.println("Vi har följande bilar att erbjuda");
-            System.out.println("");
+            System.out.println("Vi har följande bilar att erbjuda\n");
 
         // Skapar en räknare för att visa rätt indexposition i ArrayListan för bilar (börjar på 0, d.v.s. samma som index i listan)
         int j = 0;
@@ -91,12 +90,11 @@ public class Lager {
             else {
                 Forsakring.tecknaHalvForsakring();
             }
-            System.out.println("");
 
             // En nyligen köpt bil behöver tvättas innan leverans. Tvättavdelningen och deras metod för Stor tvätt anropas.
             // Även serviceavdelningen involveras. Tyvärr visar det sig att bilen inte är i det bästa skicket :)
 
-            System.out.println("Jag ska bara ringa till våran tvättavdelning och be dem tvätta av bilen innan leverans. ");
+            System.out.println("\nJag ska bara ringa till våran tvättavdelning och be dem tvätta av bilen innan leverans. ");
             System.out.println("Likaså kommer vi göra en avstämning av bromsarna, däck och motorn på service-avdelningen innan leverans.\n");        
             System.out.println("Protokollet från dessa genomgångar syns nedanför:\n");
   
@@ -104,9 +102,8 @@ public class Lager {
             Service.BromsService();
             Service.DackService();
             Service.MotorService();
-            System.out.println("");
 
-            System.out.println("Säljare: Vi hörs av och stämmer av en passande dag för leverans framöver!");
+            System.out.println("\nSäljare: Vi hörs av och stämmer av en passande dag för leverans framöver!");
             System.out.println("Köpare: Absolut, det gör vi!");
             
             //Den köpta bilen läggs till i objektet nyKund

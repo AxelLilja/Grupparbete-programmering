@@ -12,16 +12,16 @@ package grupparbete.programmering.grupp.pkg5;
 public class Forsakring {
     
     // Attribut för försäkringen. Beroende på bilens ålder ingår en hel- eller halvförsäkring
-    static boolean halvforsakring;
-    static boolean helforsakring;
+    //static boolean halvforsakring;
+    //static boolean helforsakring;
     
     public static void tecknaHelForsakring (){
         System.out.println("helförsäkring");
-        helforsakring = true;
+        //helforsakring = true;
     }
     
     public static void tecknaHalvForsakring (){
         System.out.println("halvförsäkring");
-        halvforsakring = true;
+        //halvforsakring = true;
     }
 }

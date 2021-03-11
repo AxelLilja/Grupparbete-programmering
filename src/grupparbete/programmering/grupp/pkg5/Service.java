@@ -45,15 +45,14 @@ public class Service {
     public static void BromsService (){
     System.out.println("Bromsarna är slut och behöver bytas.");    
     }
-
-    public static void DackService () {
-    System.out.println("Nu har vi bytt till nya fina däck på bilen!"); 
-    }
-   
+    
     public static void MotorService (){
     System.out.println("Motoroljan är bytt och motorn är OK!");
     }
     
+    public static void DackService () {
+    System.out.println("Nu har vi bytt till nya fina däck på bilen!"); 
+    }    
 }
 
 

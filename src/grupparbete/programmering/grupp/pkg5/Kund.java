@@ -15,7 +15,7 @@ public class Kund {
     
     
     // Attribut för klassen Köpare
-    final String namn;
+    public final String namn;
     public String typAvAffar;
     public Bilar minBil; 
  
