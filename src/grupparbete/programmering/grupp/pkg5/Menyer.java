@@ -70,7 +70,8 @@ public class Menyer {
     }
     
     public static int VerkstadsMenyn(){
-        do {            
+        do { 
+            felaktigInput = false;
             System.out.println("\nVälkommen till verkstaden!");
             System.out.println("____________________________");
             System.out.println("Vi erbjuder följande service");
