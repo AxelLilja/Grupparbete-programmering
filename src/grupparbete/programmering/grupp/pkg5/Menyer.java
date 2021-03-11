@@ -13,18 +13,39 @@ public class Menyer {
     private static int val;
     //Boolean för felaktigt val i menyn
     private static boolean felaktigInput = false;
+    private static boolean kund = false;
     //Objekt av ny kund
     public static Kund nyKund;
-    
+    //TODO Try-Catch block glöm inte felaktiginput false
     public static boolean ValkommenKundEllerPersonal(){
+        kund = false;
+        felaktigInput = true;
+        do {            
         System.out.println("\nVälkommen till vår Bilhall!");
         System.out.println("Logga in som:");
         System.out.println("1 Kund");
         System.out.println("2 Personal stänger Bilhallen");
         System.out.print("Gör ditt val: ");
-        val = BilHall.GetInput();
-        if(val == 2)return false;
-        else return true;
+            try {
+                val = BilHall.GetInput();
+                switch(val){
+                    case 1:
+                        felaktigInput = false;
+                        kund = true;                        
+                        break;
+                    case 2:
+                        felaktigInput = false;
+                        kund = false;                       
+                        break;
+                    default:
+                        felaktigInput = true;
+                        break;                 
+                }
+            } catch (Exception e) {
+                felaktigInput = true;
+            }                
+        } while (felaktigInput);
+        return kund;
     }
     
     public static void Registrering(){
@@ -41,7 +62,8 @@ public class Menyer {
     public static int HuvudMeny(){
              
         // Huvudmenyn som presenteras.
-        do {            
+        do {
+            felaktigInput = false;
             System.out.println("");
             System.out.println("Huvudmeny");
             System.out.println("Vad vill du göra?");
@@ -129,11 +151,36 @@ public class Menyer {
     }
     
     public static boolean HandlaMerEllerNyKund(){
-        System.out.println("\n1 Gå tillbaka till huvudmenyn.");
-        System.out.println("2 Ge plats åt ny kund eller personal stänger för dagen.");
+
+        do {            
+            System.out.println("\n1 Gå tillbaka till huvudmenyn.");
+            System.out.println("2 Ge plats åt ny kund eller personal stänger för dagen.");
+            System.out.print("Gör ditt val: ");
+            try {
+                val = BilHall.GetInput();
+                switch(val){
+                    case 1:
+                        felaktigInput = false;
+                        kund = true;                        
+                        break;
+                    case 2:
+                        felaktigInput = false;
+                        kund = false;                       
+                        break;
+                    default:
+                        felaktigInput = true;
+                        break;                 
+                }
+            } catch (Exception e) {
+                felaktigInput = true;
+            }                
+        } while (felaktigInput);
+        return kund;       
+        /*
         val = BilHall.GetInput();
         if(val == 2)return false;
-        else return true;       
+        else return true;
+        */
     }
 
     public static void Bokslut(){

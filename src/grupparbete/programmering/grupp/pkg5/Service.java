@@ -13,14 +13,14 @@ import java.util.Random;
 public class Service {
     
     //Om service väljs i huvudmenyn
-    public static void ServiceVal(int menyVal){ 
+    public static void ServiceVal(int menyval){ 
         
         // Random-metoderna nedanför i den "nästlade" IF-satsen ger 
         //slumpmässiga utfall om verkstaden behöver göra något arbete eller ej.
         Random randBoolean = new Random ();
         boolean random = randBoolean.nextBoolean();
     
-        switch(menyVal){
+        switch(menyval){
             case 1:
                 System.out.println("Bromsservice. Nu kollar vi dina bromsar.");
                 if (random == true)BromsService();
