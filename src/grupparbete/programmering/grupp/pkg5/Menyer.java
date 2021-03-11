@@ -97,6 +97,37 @@ public class Menyer {
         } while (felaktigInput);
         return val;
     }
+    public static int tvattmeny(){
+        do {
+        felaktigInput = false;
+        System.out.println();
+        System.out.println("Välkommen till våran tvättavdelning!");
+        System.out.println();
+        System.out.println("Tvättmeny");
+        System.out.println("Vad vill du göra?");
+        System.out.println("_______________________________________");
+        System.out.println();
+        System.out.println("1 För att få en liten tvätt ");
+        System.out.println("2 För att få en mellan tvätt");
+        System.out.println("3 För att få en stor tvätt");
+
+        try {
+            val = BilHall.GetInput();
+            if(val < 1 || val > 3){
+            System.out.println();
+            System.out.println("Välj en siffra 1 till 3 !");
+            felaktigInput = true;
+            }
+        } catch (Exception e) {
+            System.out.println();
+            System.out.println("Felaktigt val, försök igen.");
+            felaktigInput = true;
+        }
+
+        } while (felaktigInput);
+        return val;
+    }
+    
     public static boolean HandlaMerEllerNyKund(){
         System.out.println("\n1 Gå tillbaka till huvudmenyn.");
         System.out.println("2 Ge plats åt ny kund eller personal stänger för dagen.");

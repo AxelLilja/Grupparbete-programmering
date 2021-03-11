@@ -48,7 +48,8 @@ public class BilHall {
                     Service.ServiceVal(menyval);
                 }       
                 else if (menyval == 2){
-                    Tvatt.TvattVal();
+                    menyval = Menyer.tvattmeny();
+                    Tvatt.TvattVal(menyval);
                 }     
                 else if (menyval == 3){
                     Lager.BilarILager();

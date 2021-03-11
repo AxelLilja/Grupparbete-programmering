@@ -10,6 +10,23 @@ package grupparbete.programmering.grupp.pkg5;
  * @author schum
  */
 public class Tvatt {
+    
+    public static void TvattVal(int menyval){
+        switch (menyval) {
+            case 1 -> {
+            System.out.println();
+            Tvatt.LitenTvatt();
+        }
+        case 2 -> {
+            System.out.println();
+            Tvatt.MellanTvatt();
+        }
+        case 3 -> {
+            System.out.println();
+            Tvatt.StorTvatt();
+        }
+        }
+    }
     //Om tvätt väljs i huvudmenyn
     public static void TvattVal(){
         System.out.println("Välkommen till våran tvättavdelning!");
