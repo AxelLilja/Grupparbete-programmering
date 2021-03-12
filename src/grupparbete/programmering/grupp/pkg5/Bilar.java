@@ -5,8 +5,6 @@
  */
 package grupparbete.programmering.grupp.pkg5;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author schum

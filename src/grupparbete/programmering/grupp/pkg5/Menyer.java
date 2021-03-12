@@ -14,9 +14,9 @@ public class Menyer {
     //Boolean för felaktigt val i menyn
     private static boolean felaktigInput = false;
     private static boolean kund = false;
-    //Objekt av ny kund
+    //Objekt av ny kund, public för att nyKund skall kunna lägga till minBil vid köp och sälj
     public static Kund nyKund;
-    //TODO Try-Catch block glöm inte felaktiginput false
+
     public static boolean ValkommenKundEllerPersonal(){
         kund = false;
         felaktigInput = true;
@@ -116,7 +116,7 @@ public class Menyer {
         } while (felaktigInput);
         return val;
     }
-    public static int tvattmeny(){
+    public static int Tvattmeny(){
         do {
         felaktigInput = false;
         System.out.println();

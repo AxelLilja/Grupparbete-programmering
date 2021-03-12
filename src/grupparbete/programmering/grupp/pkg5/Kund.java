@@ -15,6 +15,7 @@ public class Kund {
     
     
     // Attribut för klassen Köpare
+    // namn är final för den ändras aldrig under kundens inlogg 
     public final String namn;
     public String typAvAffar;
     public Bilar minBil; 

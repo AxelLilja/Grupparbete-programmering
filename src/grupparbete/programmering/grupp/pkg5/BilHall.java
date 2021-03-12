@@ -48,7 +48,7 @@ public class BilHall {
                         Service.ServiceVal(menyval);
                         break;
                     case 2:
-                        menyval = Menyer.tvattmeny();
+                        menyval = Menyer.Tvattmeny();
                         Tvatt.TvattVal(menyval);
                         break;
                     case 3:

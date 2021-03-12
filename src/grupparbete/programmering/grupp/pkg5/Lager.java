@@ -17,7 +17,7 @@ public class Lager {
     private final static Bilar bil2 = new Bilar("Honda", "Accord", "2005", "vit", 20000, 45000, "manuell");
     private final static Bilar bil3 = new Bilar("Volkswagen", "Golf", "2013", "svart", 5000, 105000, "automat");
     private final static Bilar bil4 = new Bilar("Kia", "Ceed", "2004","Vit", 2400, 56000, "manuell");
-    
+    private final static Bilar bil5 = new Bilar("BMW", "320i", "2009", "grå metallic", 9800, 150000, "automat");
     // Lägger till olika bilar till listan över tillgängliga bilar i bilhallen.
     // Skapar en ArrayList för bilarna som finns i lager. Denna uppdateras om användaren köper eller säljer sin bil ("byter in") till bilhallen.
     public static ArrayList <Bilar> listaBilar = new ArrayList<>();
@@ -28,7 +28,7 @@ public class Lager {
     listaBilar.add(bil2);
     listaBilar.add(bil3);
     listaBilar.add(bil4);
-    listaBilar.add(new Bilar("BMW", "320i", "2009", "grå metallic", 9800, 150000, "automat"));        
+    listaBilar.add(bil5);        
     }
     
     public static void BilarILager(){
