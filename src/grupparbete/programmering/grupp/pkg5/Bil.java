@@ -9,7 +9,7 @@ package grupparbete.programmering.grupp.pkg5;
  *
  * @author schum
  */
-public class Bilar {
+public class Bil {
     
     // Attribut för klassen bilar
     public String tillverkare;
@@ -20,8 +20,8 @@ public class Bilar {
     public int pris;
     private final String vaxellada;
     
-    // Skapar konstruktor för klassen Bilar
-    public Bilar (String tillverkare, String modell, String arsmodell, String farg, int mil, int pris, String vaxellada){
+    // Skapar konstruktor för klassen Bil
+    public Bil (String tillverkare, String modell, String arsmodell, String farg, int mil, int pris, String vaxellada){
         this.tillverkare = tillverkare;
         this.modell = modell;
         this.arsmodell = arsmodell;

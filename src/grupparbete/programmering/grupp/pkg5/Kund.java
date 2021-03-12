@@ -18,14 +18,14 @@ public class Kund {
     // namn är final för den ändras aldrig under kundens inlogg 
     public final String namn;
     public String typAvAffar;
-    public Bilar minBil; 
+    public Bil minBil; 
  
     
     // Skapar en ArrayList för olika köpare
     public static ArrayList <Kund> listaKunder = new ArrayList<>();
     
     // Konstruktor för klassen Köpare
-    public Kund (String namn, String typAvAffar, Bilar minBil){
+    public Kund (String namn, String typAvAffar, Bil minBil){
         this.namn = namn;
         this.typAvAffar = typAvAffar;
         this.minBil = minBil;
@@ -54,9 +54,9 @@ public class Kund {
         String inkopVaxellada = BilHall.GetInputString();
         System.out.println("");
             
-        // När all information är sparad i variabler används dessa i metoden KopaInBil som ligger i Bilar-klassen. 
+        // När all information är sparad i variabler används dessa i metoden KopaInBil som ligger i Bil-klassen. 
         // minBil används för att koppla bilen till kunden
-        Bilar minBil = new Bilar(inkopTillverkare, inkopModell, inkopArsmodell, inkopFarg, inkopMil, inkopPris, inkopVaxellada);    
+        Bil minBil = new Bil(inkopTillverkare, inkopModell, inkopArsmodell, inkopFarg, inkopMil, inkopPris, inkopVaxellada);    
         Lager.KopaInBil(minBil);
         
             

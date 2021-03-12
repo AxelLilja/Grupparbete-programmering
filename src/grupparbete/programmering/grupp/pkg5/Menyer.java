@@ -51,8 +51,8 @@ public class Menyer {
     public static void Registrering(){
         System.out.print("\nNy kund registrering krävs.\nVad heter ni? ");
         String namn = BilHall.GetInputString();
-        //Skapar ett tomt Bilar objekt
-        Bilar minBil = new Bilar("", "", "", "", 0, 0, "");
+        //Skapar ett tomt Bil objekt
+        Bil minBil = new Bil("", "", "", "", 0, 0, "");
         //Skapar ett nyKund objekt
         nyKund = new Kund(namn, "", minBil);
         //Lägger till i lista över kunder
@@ -182,7 +182,7 @@ public class Menyer {
         }
         System.out.println("\nBilar i lager:");
         int j = 1;
-        for (Bilar i: Lager.listaBilar){
+        for (Bil i: Lager.listaBilar){
                 System.out.print(j++);
                 i.Beskrivning();                   
             }
