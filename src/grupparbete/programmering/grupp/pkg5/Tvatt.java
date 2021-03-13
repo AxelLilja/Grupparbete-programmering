@@ -27,12 +27,6 @@ public class Tvatt {
         }
         }
     }
-    /*
-    //Om tvätt väljs i huvudmenyn
-    public static void TvattVal(){
-        System.out.println("Välkommen till våran tvättavdelning!");
-    }
-    */
     
     // Skapar metoder för de olika tvättalternativen som erbjuds
     public static void LitenTvatt () {
