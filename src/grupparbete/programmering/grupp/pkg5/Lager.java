@@ -63,6 +63,7 @@ public class Lager {
             System.out.println("Tyvärr. Vi har inga bilar i lager att sälja idag");
         } 
         else {
+            System.out.println("");
             int j = 0;
             //Dynamisk lista för bilar i lager
             for (Bil i: Lager.listaBilar){
