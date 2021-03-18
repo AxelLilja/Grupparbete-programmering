@@ -63,7 +63,14 @@ public class Lager {
             System.out.println("Tyvärr. Vi har inga bilar i lager att sälja idag");
         } 
         else {
-            System.out.println("Säljare: Jag har förstått att du har bestämt dig för en bil. Vilken föll valet på?");
+            int j = 0;
+            //Dynamisk lista för bilar i lager
+            for (Bil i: Lager.listaBilar){
+                j++;
+                System.out.print("Alternativ " + j);
+                i.Beskrivning();                   
+            }            
+            System.out.println("\nSäljare: Jag har förstått att du har bestämt dig för en bil. Vilken föll valet på?");
             System.out.print("Köpare: Jag vill köpa bil: ");
             int kopval = 0;
             boolean felaktigInput = false;
