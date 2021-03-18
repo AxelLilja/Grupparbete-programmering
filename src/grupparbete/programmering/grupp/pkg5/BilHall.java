@@ -17,31 +17,39 @@ public class BilHall {
    
     public static void main(String[] args) { 
  
-        //Fyller på listaBilar med bilar från lagret
+        // Fyller på listaBilar med bilar från lagret innan öppning.
         Lager.SkapaListaBilar();
         
-        //Booleans för looparna
-        //Om kund eller personal
+        // Boolean för att veta om det är en kund eller ej.
+        // Om det är en kund i hallen är denna true.
         boolean kund;
-        //Personal stänger Bilhallen för dagen
+        
+        //Boolean för om bilhallen ska vara öppen eller ej. 
         boolean fortfarandeOppet = true;
-        //Do-while loopen håller bilhallen öppen tills personalen stänger
-        do {         
+        
+        // Do-while loopen håller bilhallen öppen tills personalen stänger.
+        // Så länge som boolean "fortfarandeOppet" är true körs menyn. 
+        do {  
+            // Första val sker i klassen Menyer. Kund eller personal.
             kund = Menyer.ValkommenKundEllerPersonal();
+            
+            // Om inte kund kommer bilhallen så småningom att stänga.
             if(!kund) fortfarandeOppet = false;           
             
-            //Kundregistrering
+            // Om kund får kund göra en kundregistrering.
             if(kund)Menyer.Registrering();
             
-            // Menystrukturen ligger inne i en While-loop som möjligjör fortsatt köp som samma kund           
+            // Menystrukturen för kund ligger inne i en inre While-loop som möjligjör fortsatta köp som samma kund.           
+            // Denna körs så länge det är en kund i hallen.
             while (kund){
-                //Användaren/kunden får göra sitt val (vad som ska göras i bilhallen idag).
+                // Användaren/kunden får göra sitt val (vad som ska göras i bilhallen idag).
                 int menyval = Menyer.HuvudMeny();
                 
-                //Booleans för meny hantering, om bilaffär gjorts
-                //tvingas vi till ny kund registrering.              
+                // Boolean för meny hantering. Om en bilaffär gjorts tvingas
+                // vi till en ny kundregistrering.              
                 boolean bilAffar = false;
 
+                // Switch-case anropar olika metoder i olika klasser beroende på kundens val.
                 switch (menyval) {
                     case 1:
                         menyval = Menyer.VerkstadsMenyn();
@@ -67,20 +75,21 @@ public class BilHall {
                 else kund = false;
             }//While loopens slut
  
-        } while (fortfarandeOppet);//Do-while loopens början
+        } while (fortfarandeOppet);
         
-        //Bokslut över dagens kunder och bilförsäljning
+        // Bokslut över dagens kunder och bilförsäljning. Om den yttre
+        // Do-while-loopen hoppar ur körs metoden för bokslut i klassen Menyer.
         Menyer.Bokslut();
     }           
         
     
-        //GetInput funktion integer
+        //GetInput metod för integer används vid kundval
         public static int GetInput(){
             Scanner scan = new Scanner(System.in);
             int input = Integer.parseInt(scan.next());//Parse to int för att säkerställa exception om inte tolkbart till integer
             return input;
         }
-        //GetInputString funktion String
+        //GetInputString metod för String används vid kundval
         public static String GetInputString(){
             Scanner scan = new Scanner(System.in);//Försäkra om inget slask i buffertminnet
             String input = scan.next().trim(); //Trimmar bort tomrum innan och efter text

@@ -14,28 +14,29 @@ import java.util.ArrayList;
 public class Kund {
     
     
-    // Attribut för klassen Köpare
-    // namn är final för den ändras aldrig under kundens inlogg 
+    // Attribut för köparen i klassen Kund. Attribut "minBil" håller information om ev. bilobjekt som köpts eller sålts.
+    // Attribut för namn är satt till final för den ändras aldrig under kundens inlogg. 
     public final String namn;
     public String typAvAffar;
     public Bil minBil; 
  
     
-    // Skapar en ArrayList för olika köpare
+    // Skapar en ArrayList för olika köpare/kunder
     public static ArrayList <Kund> listaKunder = new ArrayList<>();
     
-    // Konstruktor för klassen Köpare
+    // Konstruktor för klassen Kund. Denna används vid programmets början vid kundresgitreringen.
+    // Parametrarna för "typAvAffär och "minBil" får nya värden vid en ev. affär.
     public Kund (String namn, String typAvAffar, Bil minBil){
         this.namn = namn;
         this.typAvAffar = typAvAffar;
         this.minBil = minBil;
     }
    
-    //Metoder    
+    // Metoder    
     public static void KundSaljaBil(){
         // Kunden vill sälja bilen till bilhallen. Denna behöver komma in i listan över bilar och för att få all information
         // om bilen som vi behöver så ställer vi några frågor om bilen som kunden får svara på. Svaren scannas av och sparas i
-        // relevanta variabler. 
+        // relevanta variabler. Metoden som säkrar användarens "input" finns i klassen för Bilhallen.
             
         System.out.println("Säljare: Om vi ska köpa in din bil vänligen ange mer information om din bil");
         System.out.println("Vad är det för bilmärke?"); 
@@ -54,12 +55,13 @@ public class Kund {
         String inkopVaxellada = BilHall.GetInputString();
         System.out.println("");
             
-        // När all information är sparad i variabler används dessa i metoden KopaInBil som ligger i Bil-klassen. 
-        // minBil används för att koppla bilen till kunden
+        // När all information är sparad i variabler används dessa i metoden KopaInBil som ligger i klassen Lager.
+        // Attributet "minBil" uppdateras och håller nu information om det nya bilobjektet som köpts in och kunden sålt. 
+        // Anropar sedan metoden KopaInBil i klassen Lager med objektet "minBil" som parameter.
         Bil minBil = new Bil(inkopTillverkare, inkopModell, inkopArsmodell, inkopFarg, inkopMil, inkopPris, inkopVaxellada);    
         Lager.KopaInBil(minBil);
         
-            
+        // Bekräftelse på affären till kunden skrivs ut.  
         System.out.println("Säljare: Tack för informationen! Vi köper in din bil för " + inkopPris + " kr och den finns nu i vårat lager");
         System.out.println("Ha en trevlig dag och titta gärna på de andra bilarna vi har i lager!");
     }

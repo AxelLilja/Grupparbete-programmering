@@ -11,7 +11,8 @@ package grupparbete.programmering.grupp.pkg5;
  */
 public class Forsakring {
 
-    
+    // Metoder som tecknar antingen en hel- eller halvförsäkring beroende på bilens körsträcka vid köptillfället.
+    // Anropas vid köp av bil ifrån klassen Lager och metoden för att bilhallen säljer bil.
     public static void tecknaHelForsakring (){
         System.out.println("helförsäkring");
     }

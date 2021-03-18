@@ -11,6 +11,9 @@ package grupparbete.programmering.grupp.pkg5;
  */
 public class Tvatt {
     
+    // Klassen för Tvätt. I Switch-case nedan som är inbyggd i metoden för TvattVal gör kunden sitt val.
+    // Parametern menyval kommer ifrån klassen Bilhall och används som inparameter.
+    
     public static void TvattVal(int menyval){
         switch (menyval) {
             case 1 -> {
@@ -28,7 +31,8 @@ public class Tvatt {
         }
     }
     
-    // Skapar metoder för de olika tvättalternativen som erbjuds
+    // Metoder för de olika tvättalternativen som erbjuds.
+    // Beroende på kundens val anropas olika metoder.
     public static void LitenTvatt () {
         System.out.println("Nu är bilen avspolad och en liten tvätt är utförd");
     }

@@ -11,7 +11,7 @@ package grupparbete.programmering.grupp.pkg5;
  */
 public class Bil {
     
-    // Attribut för klassen bilar
+    // Attribut för klassen Bil.
     public String tillverkare;
     private final String modell;
     private final String arsmodell;
@@ -20,7 +20,7 @@ public class Bil {
     public int pris;
     private final String vaxellada;
     
-    // Skapar konstruktor för klassen Bil
+    // Konstruktor för klassen Bil
     public Bil (String tillverkare, String modell, String arsmodell, String farg, int mil, int pris, String vaxellada){
         this.tillverkare = tillverkare;
         this.modell = modell;
@@ -32,7 +32,7 @@ public class Bil {
         
         }
     
-    // Metoden nedan beskriver bilen/objektet/instansen ifråga när listan för tillgängliga bilar presenteras
+    // Metoden nedan beskriver bilen/objektet/instansen ifråga när listan över tillgängliga bilar presenteras
     public void Beskrivning(){
         System.out.println(": " +this.tillverkare + " " + this.modell + " årsmodell " +this.arsmodell + " i färgen " + this.farg + " som har gått " + this.mil + " mil" + " och kostar " + this.pris + ":- " + "Växellådan är " + this.vaxellada +".");
     }

@@ -12,17 +12,19 @@ import java.util.ArrayList;
  * @author Bax Musik
  */
 public class Lager {
+    
     // Skapar bilar/objekt/instanser av klassen Bil
     private final static Bil bil1 = new Bil("Volvo", "V70", "2008", "silver metallic", 9000, 95000, "manuell");
     private final static Bil bil2 = new Bil("Honda", "Accord", "2005", "vit", 20000, 45000, "manuell");
     private final static Bil bil3 = new Bil("Volkswagen", "Golf", "2013", "svart", 5000, 105000, "automat");
     private final static Bil bil4 = new Bil("Kia", "Ceed", "2004","Vit", 2400, 56000, "manuell");
     private final static Bil bil5 = new Bil("BMW", "320i", "2009", "grå metallic", 9800, 150000, "automat");
-    // Lägger till olika bilar till listan över tillgängliga bilar i bilhallen.
+   
     // Skapar en ArrayList för bilarna som finns i lager. Denna uppdateras om användaren köper eller säljer sin bil ("byter in") till bilhallen.
     public static ArrayList <Bil> listaBilar = new ArrayList<>();
     
-    //Fyll på listaBilar med bilar i lagret
+    // Fyll på listaBilar med bilar i lagret. Denna metod körs innan första kund 
+    // stiger in i hallen för att ha ett aktuellt lager.
     public static void SkapaListaBilar(){
     listaBilar.add(bil1);
     listaBilar.add(bil2);
@@ -32,7 +34,7 @@ public class Lager {
     }
     
     public static void BilarILager(){
-        // Om det inte finns några bilar i lager ges felmeddelande.
+        // Om det inte finns några bilar i lager att titta på ges ett felmeddelande.
         if (Lager.listaBilar.size() < 1){
             System.out.println("Tyvärr. Vi har inga bilar i lager idag");
         } 
@@ -58,13 +60,13 @@ public class Lager {
     }
     public static void SaljaBil(){
        
-        // Om det inte finns några bilar i lager så ges ett felmeddelande.
+        // Om det inte finns några bilar i lager att köpa för kund så ges ett felmeddelande.
         if (Lager.listaBilar.size() < 1){
             System.out.println("Tyvärr. Vi har inga bilar i lager att sälja idag");
         } 
         else {
             int j = 0;
-            //Dynamisk lista för bilar i lager
+            // Dynamisk lista för bilar i lager. Enligt samma princip som när kund tittar på bil.
             for (Bil i: Lager.listaBilar){
                 j++;
                 System.out.print("Alternativ " + j);
@@ -72,8 +74,14 @@ public class Lager {
             }            
             System.out.println("\nSäljare: Jag har förstått att du har bestämt dig för en bil. Vilken föll valet på?");
             System.out.print("Köpare: Jag vill köpa bil: ");
+            
+            // Variabel för användarens köpval.
             int kopval = 0;
+            
+            // Boolean för om användarens input tolkas felaktigt. Denna styr om nedan
+            // Do-while loop nedan ska presenteras menyn för köpval igen.
             boolean felaktigInput = false;
+            
         do{
             try {
                 kopval = BilHall.GetInput();
