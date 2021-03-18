@@ -64,8 +64,21 @@ public class Lager {
         } 
         else {
             System.out.println("Säljare: Jag har förstått att du har bestämt dig för en bil. Vilken föll valet på?");
-            System.out.print("Köpare: Jag vill köpa bil: "); 
-            int kopval = BilHall.GetInput();
+            System.out.print("Köpare: Jag vill köpa bil: ");
+            int kopval = 0;
+            boolean felaktigInput = false;
+        do{
+            try {
+                kopval = BilHall.GetInput();
+                if(kopval < 1 || kopval > Lager.listaBilar.size()){
+                        felaktigInput = true;
+                        System.out.println("\nVälj en siffra 1 till "+Lager.listaBilar.size()+" !");                    
+                } else break;
+            } catch (Exception e) {
+                felaktigInput = true;
+                System.out.println("\nFelaktigt val, försök igen.");
+            }                
+        } while (felaktigInput);
 
             // Kund gör ett val mot bakgrund av listan som presenterades i menyn ovan (valet scannas av). Observera att vi behöver "backa" kundens val 
             // med -1 p.g.a. att räknaren och Arrayen inte riktigt stämmer överens när vi anropar vilket objekt/bil som ska köpas i metoden Kopa (). Köpet genomförs. 

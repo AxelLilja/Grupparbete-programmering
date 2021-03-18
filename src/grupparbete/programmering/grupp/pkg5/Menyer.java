@@ -39,10 +39,12 @@ public class Menyer {
                         break;
                     default:
                         felaktigInput = true;
+                        System.out.println("\nVälj en siffra 1 eller 2 !");
                         break;                 
                 }
             } catch (Exception e) {
                 felaktigInput = true;
+                System.out.println("\nFelaktigt val, försök igen.");
             }                
         } while (felaktigInput);
         return kund;
@@ -78,11 +80,11 @@ public class Menyer {
             try {
                 val = BilHall.GetInput();
                 if(val < 1 || val > 5){
-                    System.out.println("Välj en siffra 1 till 5 !");
+                    System.out.println("\nVälj en siffra 1 till 5 !");
                     felaktigInput = true;
                 }
             } catch (Exception e) {
-                System.out.println("Felaktigt val, försök igen.");
+                System.out.println("\nFelaktigt val, försök igen.");
                 felaktigInput = true;
             }            
         } while (felaktigInput);
@@ -105,11 +107,11 @@ public class Menyer {
             try {
                 val = BilHall.GetInput();
                 if(val < 1 || val > 3){
-                    System.out.println("Välj en siffra 1 till 3 !");
+                    System.out.println("\nVälj en siffra 1 till 3 !");
                     felaktigInput = true;
                 }
             } catch (Exception e) {
-                System.out.println("Felaktigt val, försök igen.");
+                System.out.println("\nFelaktigt val, försök igen.");
                 felaktigInput = true;
             } 
             
@@ -134,12 +136,12 @@ public class Menyer {
             val = BilHall.GetInput();
             if(val < 1 || val > 3){
             System.out.println();
-            System.out.println("Välj en siffra 1 till 3 !");
+            System.out.println("\nVälj en siffra 1 till 3 !");
             felaktigInput = true;
             }
         } catch (Exception e) {
             System.out.println();
-            System.out.println("Felaktigt val, försök igen.");
+            System.out.println("\nFelaktigt val, försök igen.");
             felaktigInput = true;
         }
 
@@ -166,10 +168,12 @@ public class Menyer {
                         break;
                     default:
                         felaktigInput = true;
+                        System.out.println("\nVälj en siffra 1 eller 2 !");
                         break;                 
                 }
             } catch (Exception e) {
                 felaktigInput = true;
+                System.out.println("\nFelaktigt val, försök igen.");
             }                
         } while (felaktigInput);
         return kund;       
