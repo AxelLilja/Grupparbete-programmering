@@ -73,26 +73,28 @@ public class BilHall {
                 }
                 if(!bilAffar)kund = Menyer.HandlaMerEllerNyKund();
                 else kund = false;
-            }//While loopens slut
+            }
  
         } while (fortfarandeOppet);
         
         // Bokslut över dagens kunder och bilförsäljning. Om den yttre
         // Do-while-loopen hoppar ur körs metoden för bokslut i klassen Menyer.
+        
         Menyer.Bokslut();
     }           
         
+        //GetInput metod för integer används vid kundval.
     
-        //GetInput metod för integer används vid kundval
         public static int GetInput(){
             Scanner scan = new Scanner(System.in);
-            int input = Integer.parseInt(scan.next());//Parse to int för att säkerställa exception om inte tolkbart till integer
+            int input = Integer.parseInt(scan.next()); //Parse to int för att säkerställa exception om inte tolkbart till integer.
             return input;
         }
-        //GetInputString metod för String används vid kundval
+        //GetInputString metod för String används vid kundval.
+        
         public static String GetInputString(){
-            Scanner scan = new Scanner(System.in);//Försäkra om inget slask i buffertminnet
-            String input = scan.next().trim(); //Trimmar bort tomrum innan och efter text
+            Scanner scan = new Scanner(System.in); //Försäkra om inget slask i buffertminnet.
+            String input = scan.next().trim(); //Trimmar bort tomrum innan och efter text.
             return input;
         }
 }

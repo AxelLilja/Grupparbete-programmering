@@ -10,22 +10,33 @@ package grupparbete.programmering.grupp.pkg5;
  * @author Bax Musik
  */
 public class Menyer {
+    
     private static int val;
-    //Boolean för felaktigt val i menyn
+    // Boolean för felaktigt val i menyn
     private static boolean felaktigInput = false;
     private static boolean kund = false;
-    //Objekt av ny kund, public för att nyKund skall kunna lägga till minBil vid köp och sälj
+    
+    //Objekt av ny kund, public för att nyKund skall kunna lägga till minBil vid köp och sälj.
+    
     public static Kund nyKund;
 
+    // Första menyn i Bilhallen där man väljer kund eller personal.
+    
     public static boolean ValkommenKundEllerPersonal(){
         kund = false;
         felaktigInput = true;
+        
+        // Menyn ligger inuti en Do-while loop som körs med vilkor att 
+        // felaktigInput är true. Try/catch-block som fångar upp om användaren
+        // skriver in ett felaktigt värde och kör menyn igen.
+        
         do {            
         System.out.println("\nVälkommen till vår Bilhall!");
         System.out.println("Logga in som:");
         System.out.println("1 Kund");
         System.out.println("2 Personal stänger Bilhallen");
         System.out.print("Gör ditt val: ");
+        
             try {
                 val = BilHall.GetInput();
                 switch(val){
@@ -50,22 +61,36 @@ public class Menyer {
         return kund;
     }
     
+    // Metod för registrering av ny kund.
+    
     public static void Registrering(){
         System.out.print("\nNy kund registrering krävs.\nVad heter ni? ");
         String namn = BilHall.GetInputString();
-        //Skapar ett tomt Bil objekt
+        
+        // Skapar ett tomt objekt av klassen Bil. Objektet följer sedan kunden
+        // och uppdateras ex. vid köp eller försäljning av bil med nya värden.
+        
         Bil minBil = new Bil("", "", "", "", 0, 0, "");
-        //Skapar ett nyKund objekt
+        
+        // Skapar ett nyKund objekt i klassen Kund.
+        
         nyKund = new Kund(namn, "", minBil);
-        //Lägger till i lista över kunder
+        
+        // Lägger till nya kunden i ArrayListan över bilhallens kunder.
+        
         Kund.listaKunder.add(nyKund);
     }
     
     public static int HuvudMeny(){
              
-        // Huvudmenyn som presenteras.
+        // Huvudmenyn som presenteras. 
+        // Menyn ligger inuti en Do-while loop som körs med vilkor att 
+        // felaktigInput är true. Try/catch-block som fångar upp om användaren
+        // skriver in ett felaktigt värde och kör menyn igen.
+        
         do {
             felaktigInput = false;
+            
             System.out.println("\nHuvudmeny");
             System.out.println("Vad vill du göra?");
             System.out.println("_______________________________________\n");
@@ -76,6 +101,7 @@ public class Menyer {
             System.out.println("5 För att sälja din bil till oss.");
             
             // Användaren/kunden får göra sitt val (vad som ska göras i bilhallen idag).
+            
             System.out.print("\nVälj en siffra 1 - 5: ");
             try {
                 val = BilHall.GetInput();
@@ -92,8 +118,15 @@ public class Menyer {
     }
     
     public static int VerkstadsMenyn(){
+        
+        // Verkstadsmenyn som presenteras. 
+        // Menyn ligger inuti en Do-while loop som körs med vilkor att 
+        // felaktigInput är true. Try/catch-block som fångar upp om användaren
+        // skriver in ett felaktigt värde och kör menyn igen.
+        
         do { 
             felaktigInput = false;
+            
             System.out.println("\nVälkommen till verkstaden!");
             System.out.println("____________________________");
             System.out.println("Vi erbjuder följande service");
@@ -103,7 +136,8 @@ public class Menyer {
             System.out.println("Tryck 3 för Däckservice\n");
             System.out.print("Val: ");
             
-            // Användaren/kunden får göra sitt val
+            // Användaren/kunden får göra sitt val (vilken service som ska göras idag).
+            
             try {
                 val = BilHall.GetInput();
                 if(val < 1 || val > 3){
@@ -119,8 +153,15 @@ public class Menyer {
         return val;
     }
     public static int Tvattmeny(){
+        
+        // Tvättmenyn som presenteras. 
+        // Menyn ligger inuti en Do-while loop som körs med vilkor att 
+        // felaktigInput är true. Try/catch-block som fångar upp om användaren
+        // skriver in ett felaktigt värde och kör menyn igen.
+        
         do {
         felaktigInput = false;
+        
         System.out.println();
         System.out.println("Välkommen till vår tvättavdelning!");
         System.out.println();
@@ -151,10 +192,16 @@ public class Menyer {
     
     public static boolean HandlaMerEllerNyKund(){
 
+        // Avslutningsmeny som presenteras om affär inte genomförs. 
+        // Menyn ligger inuti en Do-while loop som körs med vilkor att 
+        // felaktigInput är true. Try/catch-block som fångar upp om användaren
+        // skriver in ett felaktigt värde och kör menyn igen.
+        
         do {            
             System.out.println("\n1 Gå tillbaka till huvudmenyn.");
             System.out.println("2 Ge plats åt ny kund eller personal stänger för dagen.");
             System.out.print("Gör ditt val: ");
+            
             try {
                 val = BilHall.GetInput();
                 switch(val){
@@ -180,6 +227,12 @@ public class Menyer {
     }
 
     public static void Bokslut(){
+        
+        // Metod för avslut av dagen och bokslut.
+        // Med hjälp av en forEach-loop gås listan över kunder igenom och skriver ut
+        // olika relevanta attribut för dagens affärer. Även en andra loop som skriver
+        // ut återstående bilar i lager efter dagens slut.
+        
         System.out.println("\nDagens kunder och bil affärer:");
         for (Kund i : Kund.listaKunder) {
             System.out.println(i.namn+" "+i.typAvAffar+" "+i.minBil.tillverkare+" för "+i.minBil.pris+" SEK.");       

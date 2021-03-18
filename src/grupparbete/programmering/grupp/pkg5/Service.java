@@ -11,15 +11,18 @@ import java.util.Random;
  * @author schum
  */
 public class Service {
-    
-    //Om service väljs i huvudmenyn
-    public static void ServiceVal(int menyval){ 
+         
+    // Metod om service väljs som menyval. I Switch-case nedan som är en del avmetoden för ServiceVal gör kunden sitt val.
+    // Parametern menyval kommer ifrån klassen Bilhall och används som inparameter.
         
-        // Random-metoderna nedanför i den "nästlade" IF-satsen ger 
-        //slumpmässiga utfall om verkstaden behöver göra något arbete eller ej.
+    public static void ServiceVal(int menyval){  
+
+    // Random-metoderna nedanför i den "nästlade" IF-satsen ger 
+    // slumpmässiga utfall om verkstaden behöver göra något arbete eller ej.
+    
         Random randBoolean = new Random ();
         boolean random = randBoolean.nextBoolean();
-    
+        
         switch(menyval){
             case 1:
                 System.out.println("Bromsservice. Nu kollar vi dina bromsar.");
@@ -39,9 +42,9 @@ public class Service {
         }
     }
 
-         
+    // Metoder för de olika servicealternativen som erbjuds.
+    // Beroende på kundens val anropas olika metoder.
     
-    // Skapar metoder för de olika servicealternativen som erbjuds
     public static void BromsService (){
     System.out.println("Bromsarna är slut och behöver bytas.");    
     }
