@@ -199,7 +199,7 @@ public class Menyer {
         
         do {            
             System.out.println("\n1 Gå tillbaka till huvudmenyn.");
-            System.out.println("2 Ge plats åt ny kund eller personal stänger för dagen.");
+            System.out.println("2 Lämna bilhallen.");
             System.out.print("Gör ditt val: ");
             
             try {
@@ -235,7 +235,8 @@ public class Menyer {
         
         System.out.println("\nDagens kunder och bil affärer:");
         for (Kund i : Kund.listaKunder) {
-            System.out.println(i.namn+" "+i.typAvAffar+" "+i.minBil.tillverkare+" för "+i.minBil.pris+" SEK.");       
+            if(i.minBil.pris != 0)System.out.println(i.namn+" "+i.typAvAffar+" "+i.minBil.tillverkare+" för "+i.minBil.pris+" SEK.");
+            else System.out.println(i.namn);
         }
         System.out.println("\nBilar i lager:");
         int j = 1;
